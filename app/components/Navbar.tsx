@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { ThemeToggle } from "./Themetoggle"
 import { Button } from "@/components/ui/button"
-
+import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
 
 export const Navbar = () => {
   return (
@@ -14,8 +14,13 @@ export const Navbar = () => {
             <ThemeToggle/>
 
             <div className="flex items-center gap-x-5">
-                <Button>Sign In</Button>
-                <Button variant="secondary">Login In</Button>
+            <LoginLink>
+              <Button>Sign in</Button>
+              </LoginLink>
+            <RegisterLink>
+              <Button variant="secondary">Sign up</Button>
+              </RegisterLink>
+                
             </div>
            </div>
         </div>
