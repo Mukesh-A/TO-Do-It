@@ -1,9 +1,13 @@
 import Link from "next/link"
 import { ThemeToggle } from "./Themetoggle"
 import { Button } from "@/components/ui/button"
-import {RegisterLink, LoginLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import {RegisterLink, LoginLink, LogoutLink} from "@kinde-oss/kinde-auth-nextjs/components";
+import {getKindeServerSession} from "@kinde-oss/kinde-auth-nextjs/server";
+export const Navbar = async() => {
 
-export const Navbar = () => {
+  const {isAuthenticated} = getKindeServerSession();
+
+
   return (
     <div className="border-b bg-background h-[10vh] flex items-center">
         <div className="container flex items-center justify-between">
@@ -13,7 +17,12 @@ export const Navbar = () => {
            <div className="flex items-center gap-x-5">
             <ThemeToggle/>
 
-            <div className="flex items-center gap-x-5">
+            {await isAuthenticated() ? (<div className="flex items-center gap-x-5">
+            <LogoutLink>
+              <Button>Log out</Button>
+              </LogoutLink>
+
+            </div>) : (<div className="flex items-center gap-x-5">
             <LoginLink>
               <Button>Sign in</Button>
               </LoginLink>
@@ -21,7 +30,9 @@ export const Navbar = () => {
               <Button variant="secondary">Sign up</Button>
               </RegisterLink>
                 
-            </div>
+            </div>)}
+
+            
            </div>
         </div>
     </div>
