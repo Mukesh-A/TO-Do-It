@@ -14,7 +14,7 @@ export default function Home() {
                 </span>
 
                 <h1 className='mt-8 text-3xl font-extrabold tracking-tight lg:text-6xl'>Create Notes with ease</h1>
-                <p className='max-w-xl mx-auto mt-8 text-base lg:text-xl text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique consequatur maxime harum praesentium eligendi? </p>
+                <p className='max-w-xl mx-auto mt-8 text-base lg:text-xl text-secondary'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique consequatur</p>
             </div>
             <div className="flex justify-center max-w-sm mx-auto mt-10">
                 <RegisterLink>
